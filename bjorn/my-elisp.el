@@ -1,5 +1,14 @@
 ;;; my-elisp.el --- Various pieces of elisp created by myself and others
 
+(defun inconsolata (size)
+  (interactive "p")
+  (set-default-font
+   (concat "-unknown-Inconsolata-normal-normal-normal-*-"
+           (if (stringp size) size
+             (if (= 1 size) "16"
+               (read-from-minibuffer "Size: ")))
+           "-*-*-*-m-0-*-*")))
+
 (defun yas/org-very-safe-expand ()
   (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
