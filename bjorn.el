@@ -13,6 +13,7 @@
       (append starter-kit-packages (list 'haml-mode
                                    'highlight-80+
                                    'rinari
+                                   'ruby-electric
                                    'rvm
                                    'sass-mode)))
 (starter-kit-elpa-install)
