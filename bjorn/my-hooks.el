@@ -206,8 +206,7 @@
           (lambda ()
             (orgstruct++-mode t)
             (setq fill-column 72)
-            (flyspell-mode 1)
-            (bbdb-define-all-aliases)))
+            (flyspell-mode 1)))
 
 (add-hook 'markdown-mode-hook
           (lambda ()
