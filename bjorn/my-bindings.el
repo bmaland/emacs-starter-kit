@@ -1,5 +1,5 @@
-(global-set-key (kbd "C-c C-r") 'remember)
-(global-set-key "\C-cl" 'org-store-link)
+(global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c C-l") 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
@@ -42,7 +42,7 @@
 (global-set-key (kbd "C-x f")     'recentf-ido-find-file)
 (global-set-key (kbd "C-x C-p")   'find-file-at-point)
 (global-set-key (kbd "C-c y")     'bury-buffer)
-(global-set-key (kbd "C-c r")     'revert-buffer)
+;;(global-set-key (kbd "C-c r")     'revert-buffer)
 (global-set-key (kbd "M-`")       'file-cache-minibuffer-complete)
 (global-set-key (kbd "C-x C-b")   'ibuffer)
 (global-set-key (kbd "C-x C-d")   'dired)
@@ -86,11 +86,6 @@
 (global-set-key (kbd "M-SPC")   'set-mark-command)
 (global-set-key (kbd "C-x m")   'magit-status)
 (global-set-key (kbd "s-s")     'sr-speedbar-toggle)
-
-;; Quod Libet
-(global-set-key [f10] 'quodlibet-prev)
-(global-set-key [f11] 'quodlibet-next)
-(global-set-key [f12] 'quodlibet-pause)
 
 ;; TextMate inspired bindings
 (global-set-key (kbd "M-RET") 'insert-line-below)
