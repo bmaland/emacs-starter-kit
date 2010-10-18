@@ -46,7 +46,7 @@
       ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-create-new-buffer 'always
-      ido-use-filename-at-point t
+      ido-use-filename-at-point nil
       ido-max-prospects 10
 
       ispell-program-name "aspell"
@@ -133,12 +133,3 @@
   (color-theme-tango-2)
   (global-hl-line-mode t)
   (set-face-background 'hl-line "#232323"))
-
-;; Personal customizations
-(require 'my-faces)
-(require 'my-elisp)
-(require 'my-bindings)
-(require 'my-aliases)
-(require 'my-ruby)
-(require 'my-python)
-(require 'my-hooks)
