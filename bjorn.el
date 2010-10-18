@@ -3,6 +3,8 @@
 (require 'yasnippet)
 (require 'kill-wspace-mode)
 
+(require 'filecache)
+
 ;; No idle-highlight
 (remove-hook 'coding-hook 'idle-highlight)
 
@@ -10,10 +12,11 @@
 (remove-hook 'espresso-mode-hook 'esk-paredit-nonlisp)
 
 (setq starter-kit-packages
-      (append starter-kit-packages (list 'haml-mode
-                                   'highlight-80+
-                                   'rinari
-                                   'ruby-electric
-                                   'rvm
-                                   'sass-mode)))
+      (append starter-kit-packages (list
+                                    'haml-mode
+                                    'highlight-80+
+                                    'rinari
+                                    'ruby-electric
+                                    'rvm
+                                    'sass-mode)))
 (starter-kit-elpa-install)
