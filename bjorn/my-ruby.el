@@ -11,7 +11,7 @@
              (coding-hook)
              (set-pairs '("(" "{" "[" "\"" "\'" "|"))
              (inf-ruby-keys)
-             (local-set-key [return] 'ruby-reindent-then-newline-and-indent)
+             (local-set-key [return] 'reindent-then-newline-and-indent)
              (local-set-key (kbd "C-h r") 'ri)
              (local-set-key (kbd "C-c C-c") 'ruby-compilation-this-buffer)
              (define-key ruby-mode-map (kbd "C-c M-t") 'ruby-test-file)

@@ -8,6 +8,13 @@
 ;; Also, ropemacs:
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
 
+;; I had to do this to use python-mode.el over python.el
+(load "vendor/python-mode.el")
+(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+
+(autoload 'auto-complete-mode "auto-complete")
+
+
 (setq interpreter-mode-alist (cons '("python" . python-mode)
                                    interpreter-mode-alist)
 
