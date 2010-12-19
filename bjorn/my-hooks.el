@@ -217,9 +217,8 @@
 (add-hook 'magit-log-edit-mode-hook
           (lambda ()
             (set-pairs '("(" "{" "[" "\""))
-            (auto-fill-mode 0)
-            (flyspell-mode)
-            (bit-mode 0)))
+            (auto-fill-mode 1)
+            (flyspell-mode)))
 
 (add-hook 'text-mode-hook
           (lambda ()

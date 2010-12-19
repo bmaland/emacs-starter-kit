@@ -55,6 +55,8 @@
 
 (global-set-key "\M-%"     'query-replace-regexp)
 
+(global-set-key (kbd "C-c ;")   'comment-or-uncomment-region)
+(global-set-key (kbd "C-x ;")   'comment-or-uncomment-region)
 (global-set-key "\M-#"          'calc)
 (global-set-key "\C-xf"         'recentf-ido-find-file)
 (global-set-key "\C-xx"         'file-cache-ido-find-file)
