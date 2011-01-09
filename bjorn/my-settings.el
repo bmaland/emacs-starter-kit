@@ -103,6 +103,7 @@
 (yas/initialize)
 (yas/load-directory snippet-dir)
 
+(column-number-mode t)
 (transient-mark-mode t)
 (show-paren-mode t)
 (savehist-mode t)
