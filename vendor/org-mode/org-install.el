@@ -5,7 +5,7 @@
 ;;;;;;  org-insert-link-global org-store-link org-run-like-in-org-mode
 ;;;;;;  turn-on-orgstruct++ turn-on-orgstruct orgstruct-mode org-global-cycle
 ;;;;;;  org-mode org-babel-do-load-languages) "org" "lisp/org.el"
-;;;;;;  (19523 57409))
+;;;;;;  (19714 9811))
 ;;; Generated autoloads from lisp/org.el
 
 (autoload 'org-babel-do-load-languages "org" "\
@@ -228,7 +228,7 @@ Call the customize function with org as argument.
 ;;;;;;  org-diary org-agenda-list-stuck-projects org-tags-view org-todo-list
 ;;;;;;  org-search-view org-agenda-list org-batch-store-agenda-views
 ;;;;;;  org-store-agenda-views org-batch-agenda-csv org-batch-agenda
-;;;;;;  org-agenda) "org-agenda" "lisp/org-agenda.el" (19522 36593))
+;;;;;;  org-agenda) "org-agenda" "lisp/org-agenda.el" (19708 61313))
 ;;; Generated autoloads from lisp/org-agenda.el
 
 (autoload 'org-agenda "org-agenda" "\
@@ -335,13 +335,13 @@ This feature is considered obsolete, please use the TODO list or a block
 agenda instead.
 
 With a numeric prefix argument in an interactive call, the agenda will
-span INCLUDE-ALL days.  Lisp programs should instead specify NDAYS to change
-the number of days.  NDAYS defaults to `org-agenda-ndays'.
+span INCLUDE-ALL days.  Lisp programs should instead specify SPAN to change
+the number of days.  SPAN defaults to `org-agenda-span'.
 
 START-DAY defaults to TODAY, or to the most recent match for the weekday
 given in `org-agenda-start-on-weekday'.
 
-\(fn &optional INCLUDE-ALL START-DAY NDAYS)" t nil)
+\(fn &optional INCLUDE-ALL START-DAY SPAN)" t nil)
 
 (autoload 'org-search-view "org-agenda" "\
 Show all entries that contain a phrase or words or regular expressions.
@@ -409,7 +409,6 @@ Create agenda view for projects that are stuck.
 Stuck projects are project that have no next actions.  For the definitions
 of what a project is and how to check if it stuck, customize the variable
 `org-stuck-projects'.
-MATCH is being ignored.
 
 \(fn &rest IGNORE)" t nil)
 
@@ -480,8 +479,8 @@ belonging to the \"Work\" category.
 ;;;### (autoloads (org-export-as-ascii org-export-region-as-ascii
 ;;;;;;  org-replace-region-by-ascii org-export-as-ascii-to-buffer
 ;;;;;;  org-export-as-utf8-to-buffer org-export-as-utf8 org-export-as-latin1-to-buffer
-;;;;;;  org-export-as-latin1) "org-ascii" "lisp/org-ascii.el" (19522
-;;;;;;  36594))
+;;;;;;  org-export-as-latin1) "org-ascii" "lisp/org-ascii.el" (19683
+;;;;;;  36308))
 ;;; Generated autoloads from lisp/org-ascii.el
 
 (autoload 'org-export-as-latin1 "org-ascii" "\
@@ -555,7 +554,7 @@ publishing directory.
 ;;;***
 
 ;;;### (autoloads (org-attach) "org-attach" "lisp/org-attach.el"
-;;;;;;  (19520 8176))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-attach.el
 
 (autoload 'org-attach "org-attach" "\
@@ -568,7 +567,7 @@ Shows a list of commands and prompts for another key to execute a command.
 
 ;;;### (autoloads (org-archive-subtree-default-with-confirmation
 ;;;;;;  org-archive-subtree-default) "org-archive" "lisp/org-archive.el"
-;;;;;;  (19520 8176))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-archive.el
 
 (autoload 'org-archive-subtree-default "org-archive" "\
@@ -586,7 +585,7 @@ This command is set with the variable `org-archive-default-command'.
 ;;;***
 
 ;;;### (autoloads (org-bbdb-anniversaries) "org-bbdb" "lisp/org-bbdb.el"
-;;;;;;  (19522 36594))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-bbdb.el
 
 (autoload 'org-bbdb-anniversaries "org-bbdb" "\
@@ -597,7 +596,7 @@ Extract anniversaries from BBDB for display in the agenda.
 ;;;***
 
 ;;;### (autoloads (org-capture-import-remember-templates org-capture-insert-template-here
-;;;;;;  org-capture) "org-capture" "lisp/org-capture.el" (19522 52453))
+;;;;;;  org-capture) "org-capture" "lisp/org-capture.el" (19708 43444))
 ;;; Generated autoloads from lisp/org-capture.el
 
 (autoload 'org-capture "org-capture" "\
@@ -635,7 +634,7 @@ Set org-capture-templates to be similar to `org-remember-templates'.
 ;;;***
 
 ;;;### (autoloads (org-clock-persistence-insinuate org-get-clocktable)
-;;;;;;  "org-clock" "lisp/org-clock.el" (19522 36594))
+;;;;;;  "org-clock" "lisp/org-clock.el" (19708 43444))
 ;;; Generated autoloads from lisp/org-clock.el
 
 (autoload 'org-get-clocktable "org-clock" "\
@@ -653,7 +652,7 @@ Set up hooks for clock persistence.
 ;;;***
 
 ;;;### (autoloads (org-datetree-find-date-create) "org-datetree"
-;;;;;;  "lisp/org-datetree.el" (19520 8176))
+;;;;;;  "lisp/org-datetree.el" (19683 36308))
 ;;; Generated autoloads from lisp/org-datetree.el
 
 (autoload 'org-datetree-find-date-create "org-datetree" "\
@@ -668,7 +667,7 @@ tree can be found.
 
 ;;;### (autoloads (org-insert-export-options-template org-export-as-org
 ;;;;;;  org-export-visible org-export) "org-exp" "lisp/org-exp.el"
-;;;;;;  (19522 36594))
+;;;;;;  (19714 9624))
 ;;; Generated autoloads from lisp/org-exp.el
 
 (autoload 'org-export "org-exp" "\
@@ -727,7 +726,7 @@ Insert into the buffer a template with information for exporting.
 ;;;### (autoloads (org-export-as-docbook org-export-as-docbook-pdf-and-open
 ;;;;;;  org-export-as-docbook-pdf org-export-region-as-docbook org-replace-region-by-docbook
 ;;;;;;  org-export-as-docbook-to-buffer org-export-as-docbook-batch)
-;;;;;;  "org-docbook" "lisp/org-docbook.el" (19522 36594))
+;;;;;;  "org-docbook" "lisp/org-docbook.el" (19683 36308))
 ;;; Generated autoloads from lisp/org-docbook.el
 
 (autoload 'org-export-as-docbook-batch "org-docbook" "\
@@ -803,8 +802,8 @@ publishing directory.
 ;;;***
 
 ;;;### (autoloads (org-feed-show-raw-feed org-feed-goto-inbox org-feed-update
-;;;;;;  org-feed-update-all) "org-feed" "lisp/org-feed.el" (19522
-;;;;;;  36594))
+;;;;;;  org-feed-update-all) "org-feed" "lisp/org-feed.el" (19683
+;;;;;;  36308))
 ;;; Generated autoloads from lisp/org-feed.el
 
 (autoload 'org-feed-update-all "org-feed" "\
@@ -832,7 +831,7 @@ Show the raw feed buffer of a feed.
 ;;;***
 
 ;;;### (autoloads (org-footnote-normalize org-footnote-action) "org-footnote"
-;;;;;;  "lisp/org-footnote.el" (19520 8176))
+;;;;;;  "lisp/org-footnote.el" (19714 9624))
 ;;; Generated autoloads from lisp/org-footnote.el
 
 (autoload 'org-footnote-action "org-footnote" "\
@@ -859,26 +858,49 @@ referenced sequence.
 ;;;### (autoloads (org-freemind-to-org-mode org-freemind-from-org-sparse-tree
 ;;;;;;  org-freemind-from-org-mode org-freemind-from-org-mode-node
 ;;;;;;  org-freemind-show org-export-as-freemind) "org-freemind"
-;;;;;;  "lisp/org-freemind.el" (19522 36594))
+;;;;;;  "lisp/org-freemind.el" (19683 36308))
 ;;; Generated autoloads from lisp/org-freemind.el
 
 (autoload 'org-export-as-freemind "org-freemind" "\
-Not documented
+Export the current buffer as a Freemind file.
+If there is an active region, export only the region.  HIDDEN is
+obsolete and does nothing.  EXT-PLIST is a property list with
+external parameters overriding org-mode's default settings, but
+still inferior to file-local settings.  When TO-BUFFER is
+non-nil, create a buffer with that name and export to that
+buffer.  If TO-BUFFER is the symbol `string', don't leave any
+buffer behind but just return the resulting HTML as a string.
+When BODY-ONLY is set, don't produce the file header and footer,
+simply return the content of the document (all top level
+sections).  When PUB-DIR is set, use this as the publishing
+directory.
 
-\(fn ARG &optional HIDDEN EXT-PLIST TO-BUFFER BODY-ONLY PUB-DIR)" t nil)
+See `org-freemind-from-org-mode' for more information.
+
+\(fn &optional HIDDEN EXT-PLIST TO-BUFFER BODY-ONLY PUB-DIR)" t nil)
 
 (autoload 'org-freemind-show "org-freemind" "\
-Show file MM-FILE in FreeMind.
+Show file MM-FILE in Freemind.
 
 \(fn MM-FILE)" t nil)
 
 (autoload 'org-freemind-from-org-mode-node "org-freemind" "\
 Convert node at line NODE-LINE to the FreeMind file MM-FILE.
+See `org-freemind-from-org-mode' for more information.
 
 \(fn NODE-LINE MM-FILE)" t nil)
 
 (autoload 'org-freemind-from-org-mode "org-freemind" "\
 Convert the `org-mode' file ORG-FILE to the FreeMind file MM-FILE.
+All the nodes will be opened or closed in Freemind just as you
+have them in `org-mode'.
+
+Note that exporting to Freemind also gives you an alternative way
+to export from `org-mode' to html.  You can create a dynamic html
+version of the your org file, by first exporting to Freemind and
+then exporting from Freemind to html.  The 'As
+XHTML (JavaScript)' version in Freemind works very well (and you
+can use a CSS stylesheet to style it).
 
 \(fn ORG-FILE MM-FILE)" t nil)
 
@@ -897,7 +919,7 @@ Convert FreeMind file MM-FILE to `org-mode' file ORG-FILE.
 ;;;### (autoloads (org-export-htmlize-generate-css org-export-as-html
 ;;;;;;  org-export-region-as-html org-replace-region-by-html org-export-as-html-to-buffer
 ;;;;;;  org-export-as-html-batch org-export-as-html-and-open) "org-html"
-;;;;;;  "lisp/org-html.el" (19522 36594))
+;;;;;;  "lisp/org-html.el" (19699 28931))
 ;;; Generated autoloads from lisp/org-html.el
 
 (put 'org-export-html-style-include-default 'safe-local-variable 'booleanp)
@@ -991,7 +1013,7 @@ that uses these same face definitions.
 
 ;;;### (autoloads (org-export-icalendar-combine-agenda-files org-export-icalendar-all-agenda-files
 ;;;;;;  org-export-icalendar-this-file) "org-icalendar" "lisp/org-icalendar.el"
-;;;;;;  (19522 52453))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-icalendar.el
 
 (autoload 'org-export-icalendar-this-file "org-icalendar" "\
@@ -1016,9 +1038,10 @@ The file is stored under the name `org-combined-agenda-icalendar-file'.
 
 ;;;***
 
-;;;### (autoloads (org-id-find-id-file org-id-find org-id-goto org-id-get-with-outline-drilling
-;;;;;;  org-id-get-with-outline-path-completion org-id-get org-id-copy
-;;;;;;  org-id-get-create) "org-id" "lisp/org-id.el" (19522 52453))
+;;;### (autoloads (org-id-store-link org-id-find-id-file org-id-find
+;;;;;;  org-id-goto org-id-get-with-outline-drilling org-id-get-with-outline-path-completion
+;;;;;;  org-id-get org-id-copy org-id-get-create) "org-id" "lisp/org-id.el"
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-id.el
 
 (autoload 'org-id-get-create "org-id" "\
@@ -1079,10 +1102,15 @@ Query the id database for the file in which this ID is located.
 
 \(fn ID)" nil nil)
 
+(autoload 'org-id-store-link "org-id" "\
+Store a link to the current entry, using its ID.
+
+\(fn)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (org-indent-mode) "org-indent" "lisp/org-indent.el"
-;;;;;;  (19522 52453))
+;;;;;;  (19714 9997))
 ;;; Generated autoloads from lisp/org-indent.el
 
 (autoload 'org-indent-mode "org-indent" "\
@@ -1097,7 +1125,7 @@ FIXME:  How to update when broken?
 ;;;***
 
 ;;;### (autoloads (org-irc-store-link) "org-irc" "lisp/org-irc.el"
-;;;;;;  (19520 8176))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-irc.el
 
 (autoload 'org-irc-store-link "org-irc" "\
@@ -1110,7 +1138,7 @@ Dispatch to the appropriate function to store a link to an IRC session.
 ;;;### (autoloads (org-export-as-pdf-and-open org-export-as-pdf org-export-as-latex
 ;;;;;;  org-export-region-as-latex org-replace-region-by-latex org-export-as-latex-to-buffer
 ;;;;;;  org-export-as-latex-batch) "org-latex" "lisp/org-latex.el"
-;;;;;;  (19522 52453))
+;;;;;;  (19714 9624))
 ;;; Generated autoloads from lisp/org-latex.el
 
 (autoload 'org-export-as-latex-batch "org-latex" "\
@@ -1190,8 +1218,8 @@ Export as LaTeX, then process through to PDF, and open.
 ;;;***
 
 ;;;### (autoloads (org-mobile-create-sumo-agenda org-mobile-pull
-;;;;;;  org-mobile-push) "org-mobile" "lisp/org-mobile.el" (19522
-;;;;;;  52453))
+;;;;;;  org-mobile-push) "org-mobile" "lisp/org-mobile.el" (19683
+;;;;;;  36308))
 ;;; Generated autoloads from lisp/org-mobile.el
 
 (autoload 'org-mobile-push "org-mobile" "\
@@ -1217,7 +1245,7 @@ Create a file that contains all custom agenda views.
 
 ;;;### (autoloads (org-publish-current-project org-publish-current-file
 ;;;;;;  org-publish-all org-publish) "org-publish" "lisp/org-publish.el"
-;;;;;;  (19522 52453))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-publish.el
 
 (defalias 'org-publish-project 'org-publish)
@@ -1250,7 +1278,7 @@ the project.
 ;;;***
 
 ;;;### (autoloads (org-plot/gnuplot) "org-plot" "lisp/org-plot.el"
-;;;;;;  (19522 52453))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-plot.el
 
 (autoload 'org-plot/gnuplot "org-plot" "\
@@ -1264,7 +1292,7 @@ line directly before or after the table.
 
 ;;;### (autoloads (org-remember-handler org-remember org-remember-apply-template
 ;;;;;;  org-remember-annotation org-remember-insinuate) "org-remember"
-;;;;;;  "lisp/org-remember.el" (19522 52453))
+;;;;;;  "lisp/org-remember.el" (19683 36308))
 ;;; Generated autoloads from lisp/org-remember.el
 
 (autoload 'org-remember-insinuate "org-remember" "\
@@ -1340,7 +1368,7 @@ See also the variable `org-reverse-note-order'.
 ;;;***
 
 ;;;### (autoloads (org-table-to-lisp orgtbl-mode turn-on-orgtbl)
-;;;;;;  "org-table" "lisp/org-table.el" (19522 52454))
+;;;;;;  "org-table" "lisp/org-table.el" (19683 53402))
 ;;; Generated autoloads from lisp/org-table.el
 
 (autoload 'turn-on-orgtbl "org-table" "\
@@ -1364,7 +1392,7 @@ The table is taken from the parameter TXT, or from the buffer at point.
 ;;;***
 
 ;;;### (autoloads (org-export-as-taskjuggler-and-open org-export-as-taskjuggler)
-;;;;;;  "org-taskjuggler" "lisp/org-taskjuggler.el" (19520 8176))
+;;;;;;  "org-taskjuggler" "lisp/org-taskjuggler.el" (19683 36308))
 ;;; Generated autoloads from lisp/org-taskjuggler.el
 
 (autoload 'org-export-as-taskjuggler "org-taskjuggler" "\
@@ -1392,7 +1420,7 @@ with the TaskJuggler GUI.
 
 ;;;### (autoloads (org-timer-set-timer org-timer-item org-timer-change-times-in-region
 ;;;;;;  org-timer org-timer-start) "org-timer" "lisp/org-timer.el"
-;;;;;;  (19523 34291))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-timer.el
 
 (autoload 'org-timer-start "org-timer" "\
@@ -1412,11 +1440,14 @@ the region 0:00:00.
 Insert a H:MM:SS string from the timer into the buffer.
 The first time this command is used, the timer is started.  When used with
 a \\[universal-argument] prefix, force restarting the timer.
-When used with a double prefix argument \\[universal-argument] \\universal-argument], change all the timer string
+When used with a double prefix argument \\[universal-argument], change all the timer string
 in the region by a fixed amount.  This can be used to recalibrate a timer
 that was not started at the correct moment.
 
-\(fn &optional RESTART)" t nil)
+If NO-INSERT-P is non-nil, return the string instead of inserting
+it in the buffer.
+
+\(fn &optional RESTART NO-INSERT-P)" t nil)
 
 (autoload 'org-timer-change-times-in-region "org-timer" "\
 Change all h:mm:ss time in region by a DELTA.
@@ -1433,7 +1464,7 @@ Prompt for a duration and set a timer.
 
 If `org-timer-default-timer' is not zero, suggest this value as
 the default duration for the timer.  If a timer is already set,
-prompt the use if she wants to replace it.
+prompt the user if she wants to replace it.
 
 Called with a numeric prefix argument, use this numeric value as
 the duration of the timer.
@@ -1450,7 +1481,7 @@ replace any running timer.
 ;;;***
 
 ;;;### (autoloads (org-export-as-xoxo) "org-xoxo" "lisp/org-xoxo.el"
-;;;;;;  (19523 34291))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/org-xoxo.el
 
 (autoload 'org-export-as-xoxo "org-xoxo" "\
@@ -1461,21 +1492,26 @@ The XOXO buffer is named *xoxo-<source buffer name>*
 
 ;;;***
 
-;;;### (autoloads (org-babel-previous-src-block org-babel-next-src-block
-;;;;;;  org-babel-goto-named-result org-babel-goto-named-src-block
-;;;;;;  org-babel-hide-result-toggle-maybe org-babel-sha1-hash org-babel-execute-subtree
-;;;;;;  org-babel-execute-buffer org-babel-open-src-block-result
-;;;;;;  org-babel-switch-to-session org-babel-load-in-session org-babel-expand-src-block
+;;;### (autoloads (org-babel-mark-block org-babel-previous-src-block
+;;;;;;  org-babel-next-src-block org-babel-goto-named-result org-babel-goto-named-src-block
+;;;;;;  org-babel-goto-src-block-head org-babel-hide-result-toggle-maybe
+;;;;;;  org-babel-sha1-hash org-babel-execute-subtree org-babel-execute-buffer
+;;;;;;  org-babel-map-src-blocks org-babel-open-src-block-result
+;;;;;;  org-babel-switch-to-session-with-code org-babel-switch-to-session
+;;;;;;  org-babel-initiate-session org-babel-load-in-session org-babel-expand-src-block
 ;;;;;;  org-babel-execute-src-block org-babel-pop-to-session-maybe
 ;;;;;;  org-babel-load-in-session-maybe org-babel-expand-src-block-maybe
-;;;;;;  org-babel-execute-src-block-maybe) "ob" "lisp/ob.el" (19522
-;;;;;;  36593))
+;;;;;;  org-babel-execute-maybe org-babel-execute-safely-maybe) "ob"
+;;;;;;  "lisp/ob.el" (19714 9624))
 ;;; Generated autoloads from lisp/ob.el
 
-(autoload 'org-babel-execute-src-block-maybe "ob" "\
-Conditionally execute a source block.
-Detect if this is context for a Babel src-block and if so
-then run `org-babel-execute-src-block'.
+(autoload 'org-babel-execute-safely-maybe "ob" "\
+Not documented
+
+\(fn)" nil nil)
+
+(autoload 'org-babel-execute-maybe "ob" "\
+Not documented
 
 \(fn)" t nil)
 
@@ -1506,6 +1542,10 @@ Insert the results of execution into the buffer.  Source code
 execution and the collection and formatting of results can be
 controlled through a variety of header arguments.
 
+With prefix argument ARG, force re-execution even if a an
+existing result cached in the buffer would otherwise have been
+returned.
+
 Optionally supply a value for INFO in the form returned by
 `org-babel-get-src-block-info'.
 
@@ -1530,11 +1570,24 @@ session.
 
 \(fn &optional ARG INFO)" t nil)
 
+(autoload 'org-babel-initiate-session "ob" "\
+Initiate session for current code block.
+If called with a prefix argument then resolve any variable
+references in the header arguments and assign these variables in
+the session. Copy the body of the code block to the kill ring.
+
+\(fn &optional ARG INFO)" t nil)
+
 (autoload 'org-babel-switch-to-session "ob" "\
-Switch to the session of the current source-code block.
-If called with a prefix argument then evaluate the header arguments
-for the source block before entering the session. Copy the body
-of the source block to the kill ring.
+Switch to the session of the current code block.
+Uses `org-babel-initiate-session' to start the session. If called
+with a prefix argument then this is passed on to
+`org-babel-initiate-session'.
+
+\(fn &optional ARG INFO)" t nil)
+
+(autoload 'org-babel-switch-to-session-with-code "ob" "\
+Switch to code buffer and display session.
 
 \(fn &optional ARG INFO)" t nil)
 
@@ -1545,6 +1598,30 @@ argument RE-RUN the source-code block is evaluated even if
 results already exist.
 
 \(fn &optional RE-RUN)" t nil)
+
+(autoload 'org-babel-map-src-blocks "ob" "\
+Evaluate BODY forms on each source-block in FILE.
+If FILE is nil evaluate BODY forms on source blocks in current
+buffer.  During evaluation of BODY the following local variables
+are set relative to the currently matched code block.
+
+full-block ------- string holding the entirety of the code block
+beg-block -------- point at the beginning of the code block
+end-block -------- point at the end of the matched code block
+lang ------------- string holding the language of the code block
+beg-lang --------- point at the beginning of the lang
+end-lang --------- point at the end of the lang
+switches --------- string holding the switches
+beg-switches ----- point at the beginning of the switches
+end-switches ----- point at the end of the switches
+header-args ------ string holding the header-args
+beg-header-args -- point at the beginning of the header-args
+end-header-args -- point at the end of the header-args
+body ------------- string holding the body of the code block
+beg-body --------- point at the beginning of the body
+end-body --------- point at the end of the body
+
+\(fn FILE &rest BODY)" nil (quote macro))
 
 (autoload 'org-babel-execute-buffer "ob" "\
 Execute source code blocks in a buffer.
@@ -1570,6 +1647,11 @@ Toggle visibility of result at point.
 
 \(fn)" t nil)
 
+(autoload 'org-babel-goto-src-block-head "ob" "\
+Go to the beginning of the current code block.
+
+\(fn)" t nil)
+
 (autoload 'org-babel-goto-named-src-block "ob" "\
 Go to a named source-code block.
 
@@ -1592,14 +1674,20 @@ With optional prefix argument ARG, jump backward ARG many source blocks.
 
 \(fn &optional ARG)" t nil)
 
+(autoload 'org-babel-mark-block "ob" "\
+Mark current src block
+
+\(fn)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (org-babel-lob-get-info org-babel-lob-execute-maybe
-;;;;;;  org-babel-lob-ingest) "ob-lob" "lisp/ob-lob.el" (19522 36593))
+;;;;;;  org-babel-lob-ingest) "ob-lob" "lisp/ob-lob.el" (19683 36308))
 ;;; Generated autoloads from lisp/ob-lob.el
 
 (autoload 'org-babel-lob-ingest "ob-lob" "\
-Add all source-blocks defined in FILE to `org-babel-library-of-babel'.
+Add all named source-blocks defined in FILE to
+`org-babel-library-of-babel'.
 
 \(fn &optional FILE)" t nil)
 
@@ -1613,20 +1701,23 @@ if so then run the appropriate source block from the Library.
 (autoload 'org-babel-lob-get-info "ob-lob" "\
 Return a Library of Babel function call as a string.
 
-This function is analogous to org-babel-get-src-block-name. For
-both functions, after they are called, (match-string 1) matches
-the function name, and (match-string 2) matches the function
-arguments inside the parentheses. I think perhaps these functions
-should be renamed to bring out this similarity, perhaps involving
-the word 'call'.
-
 \(fn)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (org-babel-tangle org-babel-tangle-file org-babel-load-file)
-;;;;;;  "ob-tangle" "lisp/ob-tangle.el" (19522 37441))
+;;;### (autoloads (org-babel-tangle org-babel-tangle-file org-babel-load-file
+;;;;;;  org-babel-tangle-lang-exts) "ob-tangle" "lisp/ob-tangle.el"
+;;;;;;  (19699 28931))
 ;;; Generated autoloads from lisp/ob-tangle.el
+
+(defvar org-babel-tangle-lang-exts '(("emacs-lisp" . "el")) "\
+Alist mapping languages to their file extensions.
+The key is the language name, the value is the string that should
+be inserted as the extension commonly used to identify files
+written in this language.  If no entry is found in this list,
+then the name of the language is used.")
+
+(custom-autoload 'org-babel-tangle-lang-exts "ob-tangle" t)
 
 (autoload 'org-babel-load-file "ob-tangle" "\
 Load Emacs Lisp source code blocks in the Org-mode FILE.
@@ -1634,7 +1725,7 @@ This function exports the source code using
 `org-babel-tangle' and then loads the resulting file using
 `load-file'.
 
-\(fn FILE)" nil nil)
+\(fn FILE)" t nil)
 
 (autoload 'org-babel-tangle-file "ob-tangle" "\
 Extract the bodies of source code blocks in FILE.
@@ -1658,7 +1749,7 @@ exported source code blocks by language.
 ;;;***
 
 ;;;### (autoloads (org-babel-describe-bindings) "ob-keys" "lisp/ob-keys.el"
-;;;;;;  (19522 36593))
+;;;;;;  (19683 36308))
 ;;; Generated autoloads from lisp/ob-keys.el
 
 (autoload 'org-babel-describe-bindings "ob-keys" "\
