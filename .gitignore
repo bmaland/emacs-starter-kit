@@ -1,4 +1,4 @@
-loaddefs.el*
+browse-url-generic-program "google-chrome"loaddefs.el*
 backups/*
 auto-save-list
 custom.el
