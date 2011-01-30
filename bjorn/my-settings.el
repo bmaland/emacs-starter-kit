@@ -63,6 +63,7 @@
       visible-bell nil
       shift-select-mode nil
       browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome"
       prolog-program-name "pl"
       vc-follow-symlinks nil
       tramp-default-method "ssh"
