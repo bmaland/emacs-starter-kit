@@ -34,6 +34,10 @@
                :type git
                :url "https://github.com/eschulte/rhtml.git"
                :features rhtml-mode)
+        (:name textmate
+               :type git
+               :url "git://github.com/defunkt/textmate.el"
+               :load "textmate.el")
         ))
 
 (el-get 'sync)

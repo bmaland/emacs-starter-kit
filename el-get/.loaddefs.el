@@ -31,9 +31,29 @@ Not documented
 
 ;;;***
 
+;;;### (autoloads (textmate-mode) "textmate" "textmate/textmate.el"
+;;;;;;  (19781 49279))
+;;; Generated autoloads from textmate/textmate.el
+
+(defvar textmate-mode nil "\
+Non-nil if Textmate mode is enabled.
+See the command `textmate-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `textmate-mode'.")
+
+(custom-autoload 'textmate-mode "textmate" nil)
+
+(autoload 'textmate-mode "textmate" "\
+TextMate Emulation Minor Mode
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil nil ("rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el"
 ;;;;;;  "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el"
-;;;;;;  "rhtml/rhtml-sgml-hacks.el") (19781 48985 744606))
+;;;;;;  "rhtml/rhtml-sgml-hacks.el") (19781 49280 110751))
 
 ;;;***
 

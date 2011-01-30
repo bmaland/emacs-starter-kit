@@ -114,7 +114,7 @@
 (display-time-mode t)
 (auto-compression-mode t)
 (kill-wspace-mode t)
-;;(textmate-mode t)
+(textmate-mode t)
 (winner-mode t)
 
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))

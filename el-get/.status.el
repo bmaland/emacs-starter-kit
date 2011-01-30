@@ -1,1 +1,1 @@
-(:rvm "installed" :rhtml "installed")
+(:rvm "installed" :rhtml "installed" :textmate "installed")
