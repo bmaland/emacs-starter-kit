@@ -31,6 +31,12 @@ Not documented
 
 ;;;***
 
+;;;### (autoloads nil nil ("rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el"
+;;;;;;  "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el"
+;;;;;;  "rhtml/rhtml-sgml-hacks.el") (19781 48985 744606))
+
+;;;***
+
 (provide '.loaddefs)
 ;; Local Variables:
 ;; version-control: never

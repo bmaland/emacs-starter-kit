@@ -1,1 +1,1 @@
-(:rvm "installed")
+(:rvm "installed" :rhtml "installed")
