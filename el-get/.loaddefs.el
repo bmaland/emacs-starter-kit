@@ -553,6 +553,17 @@ Set value to VAR interactively.
 
 ;;;***
 
+;;;### (autoloads (color-theme-desert) "color-theme-desert/color-theme-desert"
+;;;;;;  "color-theme-desert/color-theme-desert.el" (19805 7607))
+;;; Generated autoloads from color-theme-desert/color-theme-desert.el
+
+(autoload 'color-theme-desert "color-theme-desert/color-theme-desert" "\
+Emacs color theme desert, inspired by VIM desert theme.
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (pylookup-update-all pylookup-update pylookup-lookup)
 ;;;;;;  "pylookup/pylookup" "pylookup/pylookup.el" (19805 850))
 ;;; Generated autoloads from pylookup/pylookup.el
@@ -780,7 +791,7 @@ TextMate Emulation Minor Mode
 ;;;;;;  "pymacs/pymacs.el" "python-mode/pycomplete.el" "rhtml/rhtml-erb.el"
 ;;;;;;  "rhtml/rhtml-fonts.el" "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el"
 ;;;;;;  "rhtml/rhtml-ruby-hook.el" "rhtml/rhtml-sgml-hacks.el") (19805
-;;;;;;  5786 153051))
+;;;;;;  7608 707655))
 
 ;;;***
 

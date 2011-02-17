@@ -17,7 +17,6 @@
         pylookup
         pymacs
         ropemacs
-        color-theme-tango-2
         auto-complete
         anything
         autopair
