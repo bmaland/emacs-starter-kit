@@ -8,6 +8,7 @@
 ;; Also, ropemacs:
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
 
+(autoload 'pymacs-load "pymacs" nil t)
 (autoload 'auto-complete-mode "auto-complete")
 
 (setq comint-completion-autolist t  ;list possibilities on partial
@@ -29,13 +30,13 @@
              (coding-hook)
              ;;(require 'pycomplete+)
 
-             (eldoc-mode 1)
              (highlight-80+-mode t)
 
              ;; Initialize Rope
-             ;; (when (not (fboundp 'ropemacs-mode))
-             ;;   (pymacs-load "ropemacs" "rope-")
-             ;;   (setq ropemacs-enable-autoimport 1))
+             (when (not (fboundp 'ropemacs-mode))
+               (pymacs-load "ropemacs" "rope-")
+               (setq ropemacs-enable-autoimport 1)
+               (ropemacs-mode t))
 
              ;; (load-library "pylint")
              ;; (load "pylint-flymake.el")

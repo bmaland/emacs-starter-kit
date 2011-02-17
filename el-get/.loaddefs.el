@@ -218,10 +218,11 @@ TextMate Emulation Minor Mode
 
 ;;;***
 
-;;;### (autoloads nil nil ("ipython/ipython.el" "pymacs/pymacs.el"
-;;;;;;  "python-mode/pycomplete.el" "rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el"
-;;;;;;  "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el"
-;;;;;;  "rhtml/rhtml-sgml-hacks.el") (19805 1417 574137))
+;;;### (autoloads nil nil ("color-theme-tango-2/color-theme-tango-2.el"
+;;;;;;  "ipython/ipython.el" "pymacs/pymacs.el" "python-mode/pycomplete.el"
+;;;;;;  "rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el" "rhtml/rhtml-mode.el"
+;;;;;;  "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el" "rhtml/rhtml-sgml-hacks.el")
+;;;;;;  (19805 4579 653331))
 
 ;;;***
 

@@ -131,7 +131,7 @@
 
 (when (bound-and-true-p window-system)
   (require 'color-theme)
-  (load "~/.emacs.d/vendor/color-theme-tango-2.el")
+  (require 'color-theme-tango-2)
   (color-theme-tango-2)
   (global-hl-line-mode t)
   (set-face-background 'hl-line "#232323"))

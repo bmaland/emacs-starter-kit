@@ -28,6 +28,8 @@
         ipython
         pylookup
         pymacs
+        ropemacs
+        color-theme-tango-2
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
