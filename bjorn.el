@@ -26,6 +26,8 @@
 (setq el-get-sources
       '(python-mode
         ipython
+        pylookup
+        pymacs
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"

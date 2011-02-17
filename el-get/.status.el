@@ -1,1 +1,1 @@
-(:rvm "installed" :rhtml "installed" :textmate "installed" :el-get "installed" :ipython "installed" :python-mode "installed")
+(:rvm "installed" :rhtml "installed" :textmate "installed" :el-get "installed" :ipython "installed" :python-mode "installed" :pylookup "installed" :pymacs "installed")

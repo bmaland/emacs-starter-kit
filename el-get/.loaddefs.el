@@ -3,6 +3,27 @@
 ;;; Code:
 
 
+;;;### (autoloads (pylookup-update-all pylookup-update pylookup-lookup)
+;;;;;;  "pylookup/pylookup" "pylookup/pylookup.el" (19805 850))
+;;; Generated autoloads from pylookup/pylookup.el
+
+(autoload 'pylookup-lookup "pylookup/pylookup" "\
+Lookup SEARCH-TERM in the Python HTML indexes.
+
+\(fn SEARCH-TERM)" t nil)
+
+(autoload 'pylookup-update "pylookup/pylookup" "\
+Run pylookup-update and create the database at `pylookup-db-file'.
+
+\(fn SRC &optional APPEND)" t nil)
+
+(autoload 'pylookup-update-all "pylookup/pylookup" "\
+Run pylookup-update for all sources and create the database at `pylookup-db-file'.
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (doctest-mode doctest-register-mmm-classes) "python-mode/doctest-mode"
 ;;;;;;  "python-mode/doctest-mode.el" (19805 457))
 ;;; Generated autoloads from python-mode/doctest-mode.el
@@ -95,11 +116,11 @@ COMMANDS
 \\{py-mode-map}
 VARIABLES
 
-py-indent-offset		indentation increment
-py-block-comment-prefix		comment string used by `comment-region'
-py-python-command		shell command to invoke Python interpreter
-py-temp-directory		directory used for temp files (if needed)
-py-beep-if-tab-change		ring the bell if `tab-width' is changed
+py-indent-offset    indentation increment
+py-block-comment-prefix   comment string used by `comment-region'
+py-python-command   shell command to invoke Python interpreter
+py-temp-directory   directory used for temp files (if needed)
+py-beep-if-tab-change   ring the bell if `tab-width' is changed
 
 \(fn)" t nil)
 
@@ -197,10 +218,10 @@ TextMate Emulation Minor Mode
 
 ;;;***
 
-;;;### (autoloads nil nil ("ipython/ipython.el" "python-mode/pycomplete.el"
-;;;;;;  "rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el" "rhtml/rhtml-mode.el"
-;;;;;;  "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el" "rhtml/rhtml-sgml-hacks.el")
-;;;;;;  (19805 459 16820))
+;;;### (autoloads nil nil ("ipython/ipython.el" "pymacs/pymacs.el"
+;;;;;;  "python-mode/pycomplete.el" "rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el"
+;;;;;;  "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el"
+;;;;;;  "rhtml/rhtml-sgml-hacks.el") (19805 1417 574137))
 
 ;;;***
 

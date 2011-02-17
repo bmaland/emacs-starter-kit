@@ -10,11 +10,7 @@
 
 (autoload 'auto-complete-mode "auto-complete")
 
-
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-                                   interpreter-mode-alist)
-
-      comint-completion-autolist t  ;list possibilities on partial
+(setq comint-completion-autolist t  ;list possibilities on partial
           ;completion
       comint-completion-recexact nil  ;use shortest compl. if
           ;characters cannot be added
@@ -26,19 +22,12 @@
 
 ;;py-python-command-args '("-pylab"))
 
-(setq pymacs-load-path '("~/.emacs.d/vendor"))
-
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call  "pymacs")
-(autoload 'pymacs-eval  "pymacs" nil t)
-(autoload 'pymacs-exec  "pymacs" nil t)
-(autoload 'pymacs-load  "pymacs" nil t)
+(setq pymacs-load-path '("~/.emacs.d/el-get/python-mode"))
 
 (add-hook 'python-mode-hook
           '(lambda ()
              (coding-hook)
-             ;(require 'ipython)
-             (require 'pycomplete+)
+             ;;(require 'pycomplete+)
 
              (eldoc-mode 1)
              (highlight-80+-mode t)
