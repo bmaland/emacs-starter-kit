@@ -52,7 +52,6 @@
              ;;   (pymacs-load "ropemacs" "rope-")
              ;;   (setq ropemacs-enable-autoimport 1))
 
-             (c-subword-mode t)
              ;; (load-library "pylint")
              ;; (load "pylint-flymake.el")
              (set (make-variable-buffer-local 'beginning-of-defun-function)
@@ -65,7 +64,10 @@
              (local-set-key [return] 'py-newline-and-indent)
              (local-set-key (kbd "C-c C-z") 'py-shell)
              ;;(local-set-key "\t" 'ryan-python-tab)
+             (local-set-key "\C-ct" 'nosetests-all)
              (local-set-key (kbd "C-h p") 'py-complete-help-thing-at-point)
+             (local-set-key (kbd "M-b") 'py-backward-into-nomenclature)
+             (local-set-key (kbd "M-f") 'py-forward-into-nomenclature)
 
              (local-set-key (kbd "C-;") 'my-insert-self)
 
