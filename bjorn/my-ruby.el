@@ -3,6 +3,8 @@
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
+             (setq ruby-deep-indent-paren nil)
+             (setq c-tab-always-indent nil)
              (require 'ruby-electric)
              (require 'ruby-style)
              (require 'rcodetools)
