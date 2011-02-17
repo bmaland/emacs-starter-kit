@@ -9,7 +9,7 @@
 ;; Created:    Feb 1992
 ;; Keywords:   python languages oop
 
-(defconst py-version "5.2.0"
+(defconst py-version "5.2.0+"
   "`python-mode' version number.")
 
 ;; This file is part of python-mode.el.
@@ -408,6 +408,24 @@ subsequent py-up-exception needs the line number where the region
 started, in order to jump to the correct file line.  This variable is
 set in py-execute-region and used in py-jump-to-exception.")
 
+;; Skip's XE workaround
+(unless (functionp 'string-to-syntax)
+    (defun string-to-syntax (s)
+      (cond
+       ((equal s "|") '(15))
+       ((equal s "_") '(3))
+       (t (error "Unhandled string: %s" s))))
+  )
+
+;; GNU's syntax-ppss-context
+(unless (functionp 'syntax-ppss-context)
+ (defsubst syntax-ppss-context (ppss)
+  (cond
+   ((nth 3 ppss) 'string)
+   ((nth 4 ppss) 'comment)
+   (t nil))))
+
+
 ;; 2009-09-10 a.roehler@web.de changed section start
 ;; from python.el, version "22.1"
 
@@ -444,15 +462,13 @@ Used for syntactic keywords.  N is the match number (1, 2 or 3)."
      ;; Consider property for the last char if in a fenced string.
      ((= n 3)
       (let* ((font-lock-syntactic-keywords nil)
-             (syntax (syntax-ppss)))
+             (syntax (parse-partial-sexp (point-min) (point))))
         (when (eq t (nth 3 syntax))     ; after unclosed fence
           (goto-char (nth 8 syntax))    ; fence position
           (skip-chars-forward "uUrRbB") ; skip any prefix
           ;; Is it a matching sequence?
           (if (eq (char-after) (char-after (match-beginning 2)))
-              (if (featurep 'xemacs)
-                  '(15)
-                (eval-when-compile (string-to-syntax "|")))
+                (eval-when-compile (string-to-syntax "|"))
             ))))
      ;; Consider property for initial char, accounting for prefixes.
      ((or (and (= n 2)                  ; leading quote (not prefix)
@@ -460,11 +476,9 @@ Used for syntactic keywords.  N is the match number (1, 2 or 3)."
           (and (= n 1)                  ; prefix
                (/= (match-beginning 1) (match-end 1)))) ; non-empty
       (let ((font-lock-syntactic-keywords nil))
-        (unless (eq 'string (syntax-ppss-context (syntax-ppss)))
+        (unless (eq 'string (syntax-ppss-context (parse-partial-sexp (point-min) (point))))
           ;; (eval-when-compile (string-to-syntax "|"))
-          (if (featurep 'xemacs)
-              '(15)
-            (eval-when-compile (string-to-syntax "|")))
+            (eval-when-compile (string-to-syntax "|"))
           )))
      ;; Otherwise (we're in a non-matching string) the property is
      ;; nil, which is OK.
@@ -479,7 +493,7 @@ Used for syntactic keywords.  N is the match number (1, 2 or 3)."
         ;; syntax or has word syntax and isn't a letter.
         (if (featurep 'xemacs)
             (setq table (standard-syntax-table))
-          (let ((symbol (if (featurep 'xemacs) '(3)(string-to-syntax "_")))
+          (let ((symbol (string-to-syntax "_"))
                 ;; (symbol (string-to-syntax "_"))
                 (sst (standard-syntax-table)))
             (dotimes (i 128)
@@ -499,7 +513,7 @@ Used for syntactic keywords.  N is the match number (1, 2 or 3)."
 (defsubst python-in-string/comment ()
     "Return non-nil if point is in a Python literal (a comment or string)."
     ;; We don't need to save the match data.
-    (nth 8 (syntax-ppss)))
+    (nth 8 (parse-partial-sexp (point-min) (point))))
 
 (defconst python-space-backslash-table
   (let ((table (copy-syntax-table py-mode-syntax-table)))
@@ -575,7 +589,7 @@ support for features needed by `python-mode'.")
                           )
                         "\\|"))
         (kw2 (mapconcat 'identity
-                        '("else:" "except:" "finally:" "try:")
+                        '("else:" "except:" "finally:" "try:" "lambda:")
                         "\\|"))
         (kw3 (mapconcat 'identity
                         ;; Don't include Ellipsis in this list, since it is
@@ -1458,7 +1472,9 @@ It is added to `interpreter-mode-alist' and `py-choose-shell'.
 ;; already added.
 ;;;###autoload
 (let ((modes '(("jython" . jython-mode)
-               ("python" . python-mode))))
+               ("python" . python-mode)
+               ("python3" . python-mode)
+               )))
   (while modes
     (when (not (assoc (car modes) interpreter-mode-alist))
       (push (car modes) interpreter-mode-alist))

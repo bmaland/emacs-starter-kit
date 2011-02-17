@@ -24,7 +24,9 @@
 (starter-kit-elpa-install)
 
 (setq el-get-sources
-      '((:name rvm
+      '(python-mode
+        ipython
+        (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
                :load "rvm.el"
