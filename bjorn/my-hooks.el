@@ -8,6 +8,8 @@
 
 (defun lisp-hook ()
   "Shared between lisp mode and emacs lisp mode"
+  (setq autopair-dont-activate t)
+
   (local-set-key (kbd "C-c m") 'mark-sexp)
 
   (local-set-key [return] 'reindent-then-newline-and-indent)

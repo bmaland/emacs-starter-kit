@@ -9,7 +9,10 @@
 ;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
 
 (autoload 'pymacs-load "pymacs" nil t)
-(autoload 'auto-complete-mode "auto-complete")
+(autoload 'python-pylint "python-pylint")
+(autoload 'pylint "python-pylint")
+(autoload 'python-pep8 "python-pep8")
+(autoload 'pep8 "python-pep8")
 
 (setq comint-completion-autolist t  ;list possibilities on partial
           ;completion
@@ -27,7 +30,17 @@
 
 (add-hook 'python-mode-hook
           '(lambda ()
+             ;; (push '(?' . ?')
+             ;;       (getf autopair-extra-pairs :code))
+             (setq autopair-handle-action-fns
+                   (list #'autopair-default-handle-action
+                         #'autopair-python-triple-quote-action))
+             (require 'pylookup)
+             (require 'python-pep8)
+             (require 'python-pylint)
+             (pretty-lambdas)
              (coding-hook)
+             (autopair-mode)
              ;;(require 'pycomplete+)
 
              (highlight-80+-mode t)
@@ -42,11 +55,12 @@
              ;; (load "pylint-flymake.el")
              (set (make-variable-buffer-local 'beginning-of-defun-function)
                   'py-beginning-of-def-or-class)
-             (set-pairs '("{" "[" "\"" "\'" "("))
+
              (setq py-indent-offset 4
                    py-shell-switch-buffers-on-execute nil
                    outline-regexp "def\\|class ")
 
+             (local-set-key "\C-ch" 'pylookup-lookup)
              (local-set-key [return] 'py-newline-and-indent)
              (local-set-key (kbd "C-c C-z") 'py-shell)
              ;;(local-set-key "\t" 'ryan-python-tab)

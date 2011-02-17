@@ -202,13 +202,6 @@ Subsequent calls expands the selection to larger semantic unit."
     (when file
       (find-file file))))
 
-(defun pretty-lambdas ()
-  (font-lock-add-keywords
-   nil `(("(?\\(lambda\\>\\)"
-          (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    ,(make-char 'greek-iso8859-7 107))
-                    nil))))))
-
 ;; Thanks to consolers in #emacs
 (defun random-string (len)
   (coerce (loop for i below len for x = (random 64) collect
