@@ -20,12 +20,9 @@
         auto-complete
         anything
         autopair
-        (:name rvm
-               :type git
-               :url "http://github.com/djwhitt/rvm.el.git"
-               :load "rvm.el"
-               :compile ("rvm.el")
-               :after (lambda() (rvm-use-default)))
+        magit
+        rvm
+        quack
         (:name rhtml
                :type git
                :url "https://github.com/eschulte/rhtml.git"
@@ -41,6 +38,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-mode")
 
+(require 'ack)
 (require 'yasnippet)
 (require 'kill-wspace-mode)
 

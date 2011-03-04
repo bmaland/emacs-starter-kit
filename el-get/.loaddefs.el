@@ -3,6 +3,16 @@
 ;;; Code:
 
 
+;;;### (autoloads (ack) "ack/ack" "ack/ack.el" (19813 2921))
+;;; Generated autoloads from ack/ack.el
+
+(autoload 'ack "ack/ack" "\
+Not documented
+
+\(fn COMMAND-ARGS)" t nil)
+
+;;;***
+
 ;;;### (autoloads (anything-other-buffer anything-at-point anything)
 ;;;;;;  "anything/anything" "anything/anything.el" (19805 5718))
 ;;; Generated autoloads from anything/anything.el
@@ -788,10 +798,10 @@ TextMate Emulation Minor Mode
 ;;;;;;  "auto-complete/auto-complete.el" "auto-complete/fuzzy.el"
 ;;;;;;  "auto-complete/popup.el" "autopair/autopair-tests.el" "autopair/autopair.el"
 ;;;;;;  "color-theme-tango-2/color-theme-tango-2.el" "ipython/ipython.el"
-;;;;;;  "pymacs/pymacs.el" "python-mode/pycomplete.el" "rhtml/rhtml-erb.el"
-;;;;;;  "rhtml/rhtml-fonts.el" "rhtml/rhtml-mode.el" "rhtml/rhtml-navigation.el"
-;;;;;;  "rhtml/rhtml-ruby-hook.el" "rhtml/rhtml-sgml-hacks.el") (19805
-;;;;;;  7608 707655))
+;;;;;;  "pymacs/pymacs.el" "python-mode/pycomplete.el" "quack/quack.el"
+;;;;;;  "rhtml/rhtml-erb.el" "rhtml/rhtml-fonts.el" "rhtml/rhtml-mode.el"
+;;;;;;  "rhtml/rhtml-navigation.el" "rhtml/rhtml-ruby-hook.el" "rhtml/rhtml-sgml-hacks.el")
+;;;;;;  (19813 2922 653680))
 
 ;;;***
 

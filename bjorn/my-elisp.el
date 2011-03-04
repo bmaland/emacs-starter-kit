@@ -1,5 +1,19 @@
 ;;; my-elisp.el --- Various pieces of elisp created by myself and others
 
+(autoload 'magit-get-top-dir "magit" nil t)
+
+(defun ack-in-project (pattern)
+  (interactive (list (read-string "Search for: " (thing-at-point 'symbol))))
+  (let* ((git-dir (when (functionp 'magit-get-top-dir)
+                    (magit-get-top-dir (file-name-directory (buffer-file-name)))))
+         (dir
+          (if git-dir
+              git-dir
+            (first (dir-locals-find-file (buffer-file-name))))))
+    (if dir
+        (ack dir pattern "")
+      (message (concat "Project file not found: " dir-locals-file)))))
+
 (defun is-rails-project ()
   (when (textmate-project-root)
     (file-exists-p (expand-file-name "config/environment.rb" (textmate-project-root)))))
