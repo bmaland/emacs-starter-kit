@@ -23,6 +23,7 @@
         magit
         rvm
         quack
+        org-mode
         (:name rhtml
                :type git
                :url "https://github.com/eschulte/rhtml.git"
@@ -36,7 +37,6 @@
 (el-get 'sync)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/vendor/org-mode")
 
 (require 'ack)
 (require 'yasnippet)
