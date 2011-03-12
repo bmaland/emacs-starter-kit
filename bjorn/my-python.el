@@ -1,12 +1,9 @@
 ;; Requirements:
-;; Pymacs from http://pymacs.progiciels-bpi.ca/archives/Pymacs.tar.gz
+;; - Pymacs Python module (cd ~/.emacs.d/el-get/pymacs)
 ;;
-;; For flymake, pylint must be installed and the epylint wrapper must be
-;; somewhere in PATH. On Arch Linux, epylint is included in the pylint
-;; package. pylint can be installed with easy_install.
+;; - ropemacs Python module (cd ~/.emacs.d/el-get/ropemacs)
 ;;
-;; Also, ropemacs:
-;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
+;; - pylint/epylint
 
 (autoload 'pymacs-load "pymacs" nil t)
 (autoload 'python-pylint "python-pylint")
