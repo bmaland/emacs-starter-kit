@@ -10,7 +10,6 @@
                                    'css-mode
                                    'yaml-mode
                                    'find-file-in-project
-                                   'magit
                                    'gist)
   "Libraries that should be installed by default.")
 
@@ -38,15 +37,15 @@ just have to assume it's online."
     t))
 
 ;; On your first run, this should pull in all the base packages.
-(when (esk-online?)
-  (unless package-archive-contents (package-refresh-contents))
-  (starter-kit-elpa-install))
+;; (when (esk-online?)
+;;   (unless package-archive-contents (package-refresh-contents))
+;;   (starter-kit-elpa-install))
 
 ;; Workaround for an ELPA bug that people are reporting but I've been
 ;; unable to reproduce:
-(autoload 'paredit-mode "paredit" "" t)
+;;(autoload 'paredit-mode "paredit" "" t)
 
 ;; Workaround for bug in the ELPA package for yaml-mode
-(autoload 'yaml-mode "yaml-mode" "" t)
+;;(autoload 'yaml-mode "yaml-mode" "" t)
 
 (provide 'starter-kit-elpa)

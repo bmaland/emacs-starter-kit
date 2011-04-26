@@ -1,33 +1,39 @@
 ;; First setup packages
-(setq starter-kit-packages
-      (append starter-kit-packages (list
-                                    'haml-mode
-                                    'highlight-80+
-                                    'rinari
-                                    'ruby-electric
-                                    'rvm
-                                    'sass-mode)))
+(setq starter-kit-packages  (list
+                             'highlight-80+
+                             'inf-ruby
+                             'ruby-mode
+                             'ruby-electric
+                             'ruby-compilation
+                             ))
 (starter-kit-elpa-install)
 
 (add-to-list 'load-path "~/.emacs.d/vendor/el-get")
 (require 'el-get)
 (setq el-get-sources
-      '(python-mode
+      '(
+        ;;color-theme-solarized
+        anything
+        auto-complete
+        autopair
+        color-theme
+        gist
+        haml-mode
         ipython
+        magit
+        markdown-mode
+        moz-repl
+        org-mode
+        paredit
         pylookup
         pymacs
-        ropemacs
-        auto-complete
-        anything
-        autopair
-        magit
-        rvm
+        python-mode
         quack
-        org-mode
-        (:name rhtml
-               :type git
-               :url "https://github.com/eschulte/rhtml.git"
-               :features rhtml-mode)
+        rhtml-mode
+        rinari
+        ropemacs
+        rvm
+        sass-mode
         (:name textmate
                :type git
                :url "git://github.com/defunkt/textmate.el"
@@ -51,5 +57,5 @@
 ;; No idle-highlight
 (remove-hook 'coding-hook 'idle-highlight)
 
-;; No paredit for JS
-(remove-hook 'espresso-mode-hook 'esk-paredit-nonlisp)
+;; Start the emacs server
+(server-start)

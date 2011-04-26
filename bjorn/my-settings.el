@@ -32,6 +32,10 @@
       initial-major-mode 'emacs-lisp-mode ;; Elisp as default for scratch
       default-major-mode 'org-mode
 
+      ;; Vertical split on default for Emacs 24
+      split-height-threshold nil
+      split-width-threshold 0
+
       calendar-date-style 'european
 
       ;; Flymake - only check syntax on save
@@ -135,4 +139,5 @@
   (require 'color-theme-tango-2)
   (color-theme-tango-2)
   (global-hl-line-mode t)
-  (set-face-background 'hl-line "#232323"))
+  (set-face-background 'hl-line "#232323")
+  )
