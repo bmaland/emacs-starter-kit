@@ -79,6 +79,9 @@
                                    (concat " " 24-hours ":" minutes " ")
                                    'face 'egoge-display-time)))
 
+;; SCSS-mode
+(setq scss-compile-at-save nil)
+
 (setq remember-annotation-functions '(org-remember-annotation)
       remember-handler-functions '(org-remember-handler)
 

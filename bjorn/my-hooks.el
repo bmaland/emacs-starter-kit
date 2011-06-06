@@ -127,7 +127,13 @@
 
 (add-hook 'css-mode-hook
           '(lambda ()
-             (set-pairs '("(" "[" "\"" "\'"))
+             (set-pairs '("(" "[" "\"" "\'" "{"))
+             (setq css-indent-offset 2)
+             (local-set-key [return] 'newline-and-indent)))
+
+(add-hook 'scss-mode-hook
+          '(lambda ()
+             (set-pairs '("(" "[" "\"" "\'" "{"))
              (setq css-indent-offset 2)
              (local-set-key [return] 'newline-and-indent)))
 
