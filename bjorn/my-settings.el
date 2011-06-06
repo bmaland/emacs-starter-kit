@@ -1,6 +1,8 @@
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:"
-                       (getenv "HOME") "/dotfiles/bin"))
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(unless (eq window-system 'w32)
+  (progn
+    (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:"
+                           (getenv "HOME") "/dotfiles/bin"))
+    (setq exec-path (append exec-path '("/usr/local/bin")))))
 
 ;;;;Private settings
 ;; Here stuff like names, usernames/passwords, etc, can be safely
