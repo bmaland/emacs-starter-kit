@@ -17,29 +17,31 @@
         anything
         auto-complete
         autopair
-        color-theme
-        gist
         haml-mode
-        ipython
         magit
         markdown-mode
         moz-repl
         org-mode
         paredit
-        pylookup
-        pymacs
-        python-mode
-        quack
-        rhtml-mode
-        rinari
-        ropemacs
-        rvm
         sass-mode
         (:name textmate
                :type git
                :url "git://github.com/defunkt/textmate.el"
                :load "textmate.el")
         ))
+
+(unless (eq window-system 'w32)
+  (setq el-get-sources
+        (append '(
+                  ipython
+                  pylookup
+                  pymacs
+                  python-mode
+                  rinari
+                  ropemacs
+                  rvm
+                  )
+                el-get-sources)))
 
 (el-get 'sync)
 
