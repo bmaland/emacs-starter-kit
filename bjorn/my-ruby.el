@@ -99,7 +99,7 @@ exec-to-string command, but it works and seems fast"
 (eval-after-load 'ruby-mode
   '(progn
      (require 'flymake)
-     (require 'rinari)
+     (when (boundp 'rinari) (require 'rinari))
 
      ;; Invoke ruby with '-c' to get syntax checking
      (defun flymake-ruby-init ()
