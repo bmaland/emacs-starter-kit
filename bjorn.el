@@ -1,4 +1,5 @@
 ;; First setup packages
+(unless package-archive-contents (package-refresh-contents))
 (setq starter-kit-packages  (list
                              'highlight-80+
                              'inf-ruby
