@@ -24,8 +24,6 @@
 ;; Movement for windows and buffers
 ;;(windmove-default-keybindings) ;; Shift+direction
 
-(global-set-key [(control tab)]               'next-multiframe-window)
-(global-set-key [(control shift iso-lefttab)] 'previous-multiframe-window)
 (global-set-key [(control shift right)]       'next-user-buffer)
 (global-set-key [(control shift left)]        'previous-user-buffer)
 
@@ -97,6 +95,8 @@
                                         (insert-line-below)))
 (global-set-key [(control shift k)] 'kill-whole-line)
 (global-set-key [(control shift d)] 'duplicate-line)
+(global-set-key [(control shift iso-lefttab)] 'textmate-shift-left)
+(global-set-key [(control tab)] 'textmate-shift-right)
 
 ;; (global-set-key (kbd "C-x gf") 'textmate-goto-file)
 ;; (global-set-key (kbd "C-x gs") 'textmate-goto-symbol)
