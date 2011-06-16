@@ -97,7 +97,6 @@
                                         (insert-line-below)))
 (global-set-key [(control shift k)] 'kill-whole-line)
 (global-set-key [(control shift d)] 'duplicate-line)
-(global-set-key [(control shift l)] 'mark-line)
 
 ;; (global-set-key (kbd "C-x gf") 'textmate-goto-file)
 ;; (global-set-key (kbd "C-x gs") 'textmate-goto-symbol)
