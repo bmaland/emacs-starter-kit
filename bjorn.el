@@ -17,6 +17,7 @@
         anything
         auto-complete
         autopair
+        coffee-mode
         haml-mode
         magit
         markdown-mode
@@ -24,6 +25,9 @@
         org-mode
         paredit
         sass-mode
+        csharp-mode
+        fsharp-mode
+        js3-mode
         (:name textmate
                :type git
                :url "git://github.com/defunkt/textmate.el"
