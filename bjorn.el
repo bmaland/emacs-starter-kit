@@ -22,41 +22,49 @@
         haml-mode
         magit
         markdown-mode
-        moz-repl
         org-mode
         paredit
         sass-mode
-        csharp-mode
-        fsharp-mode
         js3-mode
-        yasnippet
         ))
 
 (unless (eq window-system 'w32)
   (setq my-packages
         (append '(
+                  csharp-mode ;; git-svn
+                  fsharp-mode ;; svn
+                  moz-repl
                   rvm
                   )
                 my-packages)))
 
 (setq el-get-sources
       '(
-  (:name textmate
+        (:name textmate
                :type git
                :url "git://github.com/defunkt/textmate.el"
                :load "textmate.el")
         (:name js3-mode
                :type git
-               :url "https://github.com/thomblake/js3-mode.git"
+               :url "git://github.com/thomblake/js3-mode.git"
                :compile "js3.el"
                :post-init (lambda ()
-                            (autoload 'js3-mode "js3" nil t))
-         )))
+                            (autoload 'js3-mode "js3" nil t)))
+        (:name yasnippet
+               :type git
+               :url "git://github.com/emacsmirror/yasnippet.git"
+               :features "yasnippet"
+               :post-init (lambda ()
+                            (yas/initialize)
+                            (add-to-list 'yas/snippet-dirs (concat el-get-dir "yasnippet/snippets"))
+                            (yas/reload-all)))
+        ))
 
 (setq my-packages
       (append
        my-packages
-       (mapcar 'el-get-source-name el-get-sources)))
+       el-get-sources))
+       ;;(mapcar 'el-get-source-name el-get-sources)))
 
 (el-get 'sync my-packages)
 

@@ -1,7 +1,7 @@
 (if (eq window-system 'w32)
     (progn
       ;; append cygwin binaries to PATH
-      (setenv "PATH" (concat (getenv "PATH") ";C:\\cygwin\\bin"))
+      (setenv "PATH" (concat (getenv "PATH") ";D:\\mingw\\msys\\1.0\\bin" ";D:\\emacs-23.3\\bin"))
 
       ;; set a proper font
       (set-default-font
