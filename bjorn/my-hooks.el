@@ -142,6 +142,10 @@
              (set-pairs '("(" "[" "\"" "\'"))
              (local-set-key [return] 'newline-and-indent)))
 
+(add-hook 'sass-mode-hook
+          '(lambda ()
+             (c-subword-mode 1)))
+
 (add-hook 'yaml-mode-hook
           '(lambda ()
              (set-pairs '("(" "[" "\"" "\'"))

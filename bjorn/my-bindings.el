@@ -12,6 +12,8 @@
                                (indent-according-to-mode)
                                (previous-line)))
 
+(global-set-key (kbd "C-M-q") 'indent-region)
+
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 

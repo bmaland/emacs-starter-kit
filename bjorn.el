@@ -9,9 +9,10 @@
                              ))
 (starter-kit-elpa-install)
 
-(add-to-list 'load-path "~/.emacs.d/vendor/el-get")
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require 'el-get)
-(setq el-get-sources
+
+(setq my-packages
       '(
         ;;color-theme-solarized
         anything
@@ -28,31 +29,40 @@
         csharp-mode
         fsharp-mode
         js3-mode
-        (:name textmate
-               :type git
-               :url "git://github.com/defunkt/textmate.el"
-               :load "textmate.el")
+        yasnippet
         ))
 
 (unless (eq window-system 'w32)
-  (setq el-get-sources
+  (setq my-packages
         (append '(
-                  ipython
-                  pylookup
-                  pymacs
-                  python-mode
-                  rinari
-                  ropemacs
                   rvm
                   )
-                el-get-sources)))
+                my-packages)))
 
-(el-get 'sync)
+(setq el-get-sources
+      '(
+  (:name textmate
+               :type git
+               :url "git://github.com/defunkt/textmate.el"
+               :load "textmate.el")
+        (:name js3-mode
+               :type git
+               :url "https://github.com/thomblake/js3-mode.git"
+               :compile "js3.el"
+               :post-init (lambda ()
+                            (autoload 'js3-mode "js3" nil t))
+         )))
+
+(setq my-packages
+      (append
+       my-packages
+       (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get 'sync my-packages)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (require 'ack)
-(require 'yasnippet)
 (require 'kill-wspace-mode)
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
