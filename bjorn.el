@@ -25,7 +25,6 @@
         org-mode
         paredit
         sass-mode
-        js3-mode
         ))
 
 (unless (eq window-system 'w32)
@@ -49,7 +48,8 @@
                :url "git://github.com/thomblake/js3-mode.git"
                :compile "js3.el"
                :post-init (lambda ()
-                            (autoload 'js3-mode "js3" nil t)))
+                            (autoload 'js3-mode "js3" nil t))
+               )
         (:name yasnippet
                :type git
                :url "git://github.com/emacsmirror/yasnippet.git"
