@@ -142,6 +142,11 @@
              (set-pairs '("(" "[" "\"" "\'"))
              (local-set-key [return] 'newline-and-indent)))
 
+(add-hook 'coffee-mode-hook
+          '(lambda ()
+             (setq coffee-js-mode 'js3-mode)
+             (local-set-key [(meta r)] 'coffee-compile-buffer)))
+
 (add-hook 'sass-mode-hook
           '(lambda ()
              (c-subword-mode 1)))
