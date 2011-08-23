@@ -39,6 +39,11 @@
 
 (setq el-get-sources
       '(
+        (:name coffee-mode
+               :type git
+               :url "git://github.com/defunkt/coffee-mode.git"
+               :post-init (lambda ()
+                            (autoload 'coffee-mode "coffee-mode" nil t)))
         (:name textmate
                :type git
                :url "git://github.com/defunkt/textmate.el"

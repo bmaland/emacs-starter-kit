@@ -100,8 +100,8 @@
 (global-set-key [(control shift iso-lefttab)] 'textmate-shift-left)
 (global-set-key [(control tab)] 'textmate-shift-right)
 
-;; (global-set-key (kbd "C-x gf") 'textmate-goto-file)
-;; (global-set-key (kbd "C-x gs") 'textmate-goto-symbol)
+(global-set-key (kbd "C-x gf") 'textmate-goto-file)
+(global-set-key (kbd "C-x gs") 'textmate-goto-symbol)
 ;; (global-set-key (kbd "C-x ga") 'ack-in-project)
 ;; (global-set-key (kbd "C-x gd") 'google-define))
 
