@@ -140,6 +140,7 @@
 (add-hook 'haml-mode-hook
           '(lambda ()
              (set-pairs '("(" "[" "\"" "\'"))
+             (auto-fill-mode 0)
              (local-set-key [return] 'newline-and-indent)))
 
 (add-hook 'coffee-mode-hook
