@@ -1,3 +1,6 @@
+;; Add the marmelade repo
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 ;; First setup packages
 (unless package-archive-contents (package-refresh-contents))
 (setq starter-kit-packages  (list
