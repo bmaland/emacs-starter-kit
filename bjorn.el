@@ -27,7 +27,9 @@
         markdown-mode
         org-mode
         paredit
+        rinari
         sass-mode
+        yaml-mode
         ))
 
 (unless (eq window-system 'w32)
@@ -82,6 +84,8 @@
 (require 'kill-wspace-mode)
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 
 (require 'filecache)
 
