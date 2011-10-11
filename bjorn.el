@@ -28,6 +28,7 @@
         org-mode
         paredit
         rinari
+        rhtml-mode
         sass-mode
         yaml-mode
         ))

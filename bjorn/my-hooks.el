@@ -141,6 +141,7 @@
           '(lambda ()
              (set-pairs '("(" "[" "\"" "\'"))
              (auto-fill-mode 0)
+             (subword-mode 1)
              (local-set-key [return] 'newline-and-indent)))
 
 (add-hook 'coffee-mode-hook
@@ -150,7 +151,7 @@
 
 (add-hook 'sass-mode-hook
           '(lambda ()
-             (c-subword-mode 1)))
+             (subword-mode 1)))
 
 (add-hook 'yaml-mode-hook
           '(lambda ()
