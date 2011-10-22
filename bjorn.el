@@ -36,9 +36,9 @@
 (unless (eq window-system 'w32)
   (setq my-packages
         (append '(
-                  csharp-mode ;; git-svn
-                  fsharp-mode ;; svn
-                  moz-repl
+                  ;;csharp-mode ;; git-svn
+                  ;;fsharp-mode ;; svn
+                  ;;moz-repl
                   rvm
                   )
                 my-packages)))
@@ -80,6 +80,10 @@
 (el-get 'sync my-packages)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
+
+;; enable midnight mode
+(require 'midnight)
+(midnight-delay-set 'midnight-delay 3600)
 
 (require 'ack)
 (require 'kill-wspace-mode)
