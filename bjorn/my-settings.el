@@ -66,7 +66,7 @@
       scroll-preserve-screen-position 1
       font-lock-maximum-decoration t
       inhibit-default-init t
-      visible-bell nil
+      visible-bell t
       shift-select-mode nil
       browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome"
