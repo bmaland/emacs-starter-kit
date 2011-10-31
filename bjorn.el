@@ -69,6 +69,11 @@
                             (yas/initialize)
                             (add-to-list 'yas/snippet-dirs (concat el-get-dir "yasnippet/snippets"))
                             (yas/reload-all)))
+        (:name liquid-mode
+               :type git
+               :url "git://github.com/rehanift/Emacs-Liquid.git"
+               :post-init (lambda ()
+                            (autoload 'liquid-mode "liquid" nil t)))
         ))
 
 (setq my-packages
