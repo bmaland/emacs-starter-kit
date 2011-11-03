@@ -97,6 +97,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 
+(add-to-list 'auto-mode-alist '("\\.liquid\\'" . liquid-mode))
+
 (require 'filecache)
 
 (autoload 'autopair-global-mode "autopair" nil t)
