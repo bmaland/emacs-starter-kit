@@ -145,6 +145,9 @@
   (color-theme-tango-2)
   (global-hl-line-mode t)
   (set-face-background 'hl-line "#232323")
+  ;; Subtler highlight in magit
+  (set-face-background 'magit-item-highlight "#232323")
+  (set-face-foreground 'magit-diff-none "#666666")
   )
 
 (prefer-coding-system 'utf-8)
