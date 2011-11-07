@@ -153,3 +153,10 @@
 (prefer-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
+
+;; Automatically populate new files with content
+(require 'autoinsert)
+(auto-insert-mode t)
+(setq auto-insert-directory "~/.emacs.d/templates/")
+(setq auto-insert-query nil) ;; No prompts before insertion
+(define-auto-insert "spec\\.rb" "ruby_spec.rb")
