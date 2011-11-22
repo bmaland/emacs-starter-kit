@@ -2,6 +2,29 @@
 
 (autoload 'magit-get-top-dir "magit" nil t)
 
+(defvar magit-status-fullscreen-window-configuration-register
+  ?b
+  "The register to store the current window configuration in when
+entering fullscreen magit-status.")
+
+(defvar magit-status-fullscreen-register
+  ?g
+  "The register to store the fullscreen magit-status
+window configuration in.")
+
+(defun magit-status-fullscreen ()
+  "Save the current window configuration, run magit-status
+and delete other windows, providing a fullscreen git mode.
+The previous window configuration is stored in the register
+specified by the magit-status-fullscreen-window-configuration-register
+variable. The fullscreen magit status configuration is stored
+in register specified by the magit-status-register variable."
+  (interactive)
+  (window-configuration-to-register magit-status-fullscreen-window-configuration-register)
+  (magit-status (magit-get-top-dir default-directory))
+  (delete-other-windows)
+  (window-configuration-to-register magit-status-fullscreen-register))
+
 (defun ack-in-project (pattern)
   (interactive (list (read-string "Search for: " (thing-at-point 'symbol))))
   (let* ((git-dir (when (functionp 'magit-get-top-dir)
@@ -92,21 +115,6 @@ on, sets window non-dedicated iff `arg' is nil."
           (split-string classpath ";")
         (split-string classpath ":")))))
 
-(defun xle-create-parser ()
-  "Restart XLE and create a parser using the grammar of this file."
-  (interactive)
-  (let ((filename-split (split-string (car (last (split-string (buffer-file-name) "/"))) "-")))
-    ;; for some reason let-variables don't last past the xle-restart, so use setq:
-    (setq gram-file (concat (car (split-string (car filename-split) ".lfg$")) ".lfg")))
-  (run-xle)
-  (xle-restart)
-  (let ((xle-command (concat "create-parser "
-                             (read-from-minibuffer "Name of parser to create: " gram-file))))
-    (send-string (current-buffer) (concat "puts \{" xle-command "\}"))
-    (send-string (current-buffer) "\n")
-    (send-string (current-buffer) xle-command)
-    (send-string (current-buffer) "\n")))
-
 (defun indent-or-expand (arg)
   ;; TODO maybe try complete-tag as well
   "Either expand a snippet or the word preceding point, or indent."
@@ -160,7 +168,7 @@ Delimiters are paired characters: ()[]<>«»“”‘’「」, including \"\"."
 ;; by Nikolaj Schumacher, 2008-10-20. Released under GPL.
 (defun extend-selection (arg &optional incremental)
   "Select the current word.
-Subsequent calls expands the selection to larger semantic unit."
+   Subsequent calls expands the selection to larger semantic unit."
   (interactive (list (prefix-numeric-value current-prefix-arg)
                      (or (and transient-mark-mode mark-active)
                          (eq last-command this-command))))
@@ -247,8 +255,8 @@ Subsequent calls expands the selection to larger semantic unit."
     s))
 
 (defun ruby-eval-buffer () (interactive)
-        "Evaluate the buffer with ruby."
-        (shell-command-on-region (point-min) (point-max) "ruby"))
+  "Evaluate the buffer with ruby."
+  (shell-command-on-region (point-min) (point-max) "ruby"))
 
 (defun my-mark-word ()
   "Marks the whole word the cursor is placed on"

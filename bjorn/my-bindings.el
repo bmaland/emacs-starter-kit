@@ -29,6 +29,8 @@
 (global-set-key [(control shift right)]       'next-user-buffer)
 (global-set-key [(control shift left)]        'previous-user-buffer)
 
+(global-set-key (kbd "C-x r i")               'string-insert-rectangle)
+
 ;;; WINDOW SPLITING
 (global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
 (global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
@@ -86,7 +88,7 @@
 (global-set-key [backspace]     'delete-empty-pair)
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 (global-set-key (kbd "M-SPC")   'set-mark-command)
-(global-set-key (kbd "C-x m")   'magit-status)
+(global-set-key (kbd "C-x m")   'magit-status-fullscreen)
 (global-set-key (kbd "s-s")     'sr-speedbar-toggle)
 
 ;; TextMate inspired bindings

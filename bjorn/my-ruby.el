@@ -1,10 +1,11 @@
-(setq rinari-tags-file-name "TAGS"
-      ruby-program-name "irb -f --inf-ruby-mode -rubygems")
+(setq rinari-tags-file-name "TAGS")
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
+             ;;(rvm-activate-corresponding-ruby)
              (setq ruby-deep-indent-paren nil)
              (setq c-tab-always-indent nil)
+             (setq ruby-use-encoding-map nil)
              (require 'ruby-electric)
              (require 'ruby-style)
              (require 'rcodetools)
@@ -14,32 +15,15 @@
              (set-pairs '("(" "{" "[" "\"" "\'" "|"))
              (inf-ruby-keys)
              (local-set-key [return] 'reindent-then-newline-and-indent)
-             (local-set-key (kbd "C-h r") 'ri)
+             (local-set-key [f1] 'yari)
+             (local-set-key (kbd "C-h r") 'yari)
+             (local-set-key (kbd "C-x C-t") 'transpose-lines)
              (local-set-key (kbd "C-c C-c") 'ruby-compilation-this-buffer)
-             (define-key ruby-mode-map (kbd "C-c M-t") 'ruby-test-file)
-             (define-key ruby-mode-map (kbd "C-c C-M-t") 'ruby-test-one)
+             (local-set-key (kbd "M-e") 'ruby-forward-sexp)
+             (local-set-key (kbd "M-a") 'ruby-backward-sexp)
              ;;(local-set-key [tab] 'ri-ruby-complete-symbol)
              ;;(local-set-key "\C-c\C-a" 'ri-ruby-show-args)
              ))
-
-;; Code borrowed from Emacs starter kit
-(defun rr (&optional arg)
-  "Run a Ruby interactive shell session in a buffer."
-  (interactive "P")
-  (let ((impl (if (not arg)
-                  "mri"
-                (completing-read "Ruby Implementation: "
-                                 '("ruby" "jruby" "rubinius" "yarv")))))
-    (run-ruby (cdr (assoc impl '(("mri" . "irb")
-                                 ("jruby" . "jruby -S irb")
-                                 ("rubinius" . "rbx")
-                                 ("yarv" . "irb1.9")))))
-    (with-current-buffer "*ruby*"
-      (rename-buffer (format "*%s*" impl) t))))
-
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("jruby" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby1.9" . ruby-mode))
 
 ;;; rhtml mode
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/rhtml")

@@ -31,6 +31,8 @@
         rhtml-mode
         sass-mode
         yaml-mode
+        ;;rdebug
+        yari
         ))
 
 (unless (eq window-system 'w32)
@@ -86,6 +88,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+(require 'magit)
 ;; enable midnight mode
 (require 'midnight)
 (midnight-delay-set 'midnight-delay 3600)
