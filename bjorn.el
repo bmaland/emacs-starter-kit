@@ -93,6 +93,7 @@
 (require 'midnight)
 (midnight-delay-set 'midnight-delay 3600)
 
+(require 'iy-go-to-char)
 (require 'ack)
 (require 'kill-wspace-mode)
 (autoload 'scss-mode "scss-mode")
