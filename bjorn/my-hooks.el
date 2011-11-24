@@ -249,6 +249,10 @@
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "default")))
 
+(add-hook 'rhtml-mode-hook
+          (lambda ()
+            (auto-fill-mode 0)))
+
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
 (eval-after-load "slime"
