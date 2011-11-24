@@ -9,6 +9,7 @@
                              'ruby-mode
                              'ruby-electric
                              'ruby-compilation
+                             'rinari
                              ))
 (starter-kit-elpa-install)
 
@@ -27,12 +28,12 @@
         markdown-mode
         org-mode
         paredit
-        rinari
         rhtml-mode
         sass-mode
         yaml-mode
         ;;rdebug
         yari
+        ruby-mode
         ))
 
 (unless (eq window-system 'w32)
@@ -108,6 +109,10 @@
 (autoload 'autopair-global-mode "autopair" nil t)
 (setq autopair-pair-criteria 'always
       autopair-blink nil)
+
+;; auto save and restore session
+(desktop-save-mode 1)
+(setq desktop-restore-eager 5)
 
 ;; No idle-highlight
 (remove-hook 'coding-hook 'idle-highlight)
