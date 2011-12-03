@@ -253,6 +253,10 @@
           (lambda ()
             (auto-fill-mode 0)))
 
+(add-hook 'liquid-mode-hook
+          (lambda ()
+            (auto-fill-mode 0)))
+
 (add-hook 'server-done-hook (lambda nil (kill-buffer nil)))
 
 (eval-after-load "slime"
