@@ -33,7 +33,6 @@
         yaml-mode
         ;;rdebug
         yari
-        ruby-mode
         ))
 
 (unless (eq window-system 'w32)
