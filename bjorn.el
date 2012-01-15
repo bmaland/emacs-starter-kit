@@ -93,6 +93,8 @@
 ;; enable midnight mode
 (require 'midnight)
 (midnight-delay-set 'midnight-delay 3600)
+(setq midnight-period 7200) ;; (eq (* 2 60 60) "2 hours")
+(setq clean-buffer-list-delay-general 1)
 
 (require 'iy-go-to-char)
 (require 'ack)

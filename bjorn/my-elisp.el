@@ -1,5 +1,59 @@
 ;;; my-elisp.el --- Various pieces of elisp created by myself and others
 
+;; improves ruby indentation for certain multiline constructs
+(defadvice ruby-indent-line (after line-up-args activate)
+  (let (indent prev-indent arg-indent)
+    (save-excursion
+      (back-to-indentation)
+      (when (zerop (car (syntax-ppss)))
+        (setq indent (current-column))
+        (skip-chars-backward " \t\n")
+        (when (eq ?, (char-before))
+          (ruby-backward-sexp)
+          (back-to-indentation)
+          (setq prev-indent (current-column))
+          (skip-syntax-forward "w_.")
+          (skip-chars-forward " ")
+          (setq arg-indent (current-column)))))
+    (when prev-indent
+      (let ((offset (- (current-column) indent)))
+        (cond ((< indent prev-indent)
+               (indent-line-to prev-indent))
+              ((= indent prev-indent)
+               (indent-line-to arg-indent)))
+        (when (> offset 0) (forward-char offset))))))
+
+
+(defun align-to-colon (begin end)
+  "Align region to colon (:) signs"
+  (interactive "r")
+  (align-regexp begin end
+                (rx (group (zero-or-more (syntax whitespace))) ":") 1 1 ))
+
+(defun align-to-comma (begin end)
+  "Align region to comma signs"
+  (interactive "r")
+  (align-regexp begin end
+                (rx "," (group (zero-or-more (syntax whitespace))) ) 1 1 ))
+
+
+(defun align-to-equals (begin end)
+  "Align region to equal signs"
+  (interactive "r")
+  (align-regexp begin end
+                (rx (group (zero-or-more (syntax whitespace))) "=") 1 1 ))
+
+(defun align-to-hash (begin end)
+  "Align region to hash ( => ) signs"
+  (interactive "r")
+  (align-regexp begin end
+                (rx (group (zero-or-more (syntax whitespace))) "=>") 1 1 ))
+
+
+(defun backward-to-non-whitespace ()
+  (interactive)
+  (skip-chars-backward " \t\n\s"))
+
 (autoload 'magit-get-top-dir "magit" nil t)
 
 (defvar magit-status-fullscreen-window-configuration-register

@@ -1,5 +1,7 @@
 (setq rinari-tags-file-name "TAGS")
 
+(load "~/.emacs.d/vendor/rdoc-mode.el")
+
 (add-hook 'ruby-mode-hook
           '(lambda ()
              ;;(rvm-activate-corresponding-ruby)

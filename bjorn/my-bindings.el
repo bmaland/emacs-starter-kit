@@ -20,10 +20,16 @@
 (global-set-key (kbd "C-M-q") 'indent-region)
 
 ;; Align your code in a pretty way.
-(global-set-key (kbd "C-x \\") 'align-regexp)
+(global-set-key (kbd "C-x a r") 'align-regexp)
+(global-set-key (kbd "C-x a ,") 'align-to-comma)
+(global-set-key (kbd "C-x a :") 'align-to-colon)
+(global-set-key (kbd "C-x a >") 'align-to-hash)
+(global-set-key (kbd "C-x a =") 'align-to-equals)
 
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+(global-set-key (kbd "M-p") 'backward-to-non-whitespace)
 
 ;; Jump to a definition in the current file. (This is awesome.)
 (global-set-key "\C-x\C-i" 'ido-imenu)
