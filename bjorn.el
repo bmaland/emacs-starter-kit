@@ -6,7 +6,6 @@
 (setq starter-kit-packages  (list
                              'highlight-80+
                              'inf-ruby
-                             'ruby-mode
                              'ruby-electric
                              'ruby-compilation
                              ))
@@ -36,6 +35,7 @@
         rhtml-mode
         rinari
         rspec-mode
+        ruby-mode
         sass-mode
         textmate
         yaml-mode
