@@ -40,7 +40,6 @@
         textmate
         yaml-mode
         yari
-        ruby-mode
         ))
 
 (unless (eq window-system 'w32)
