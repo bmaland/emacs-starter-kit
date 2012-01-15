@@ -9,12 +9,17 @@
                              'ruby-mode
                              'ruby-electric
                              'ruby-compilation
-                             'rinari
                              ))
 (starter-kit-elpa-install)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require 'el-get)
+
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+   (lambda (s)
+     (end-of-buffer)
+     (eval-print-last-sexp))))
 
 (setq my-packages
       '(
@@ -29,9 +34,10 @@
         org-mode
         paredit
         rhtml-mode
+        rinari
         sass-mode
+        textmate
         yaml-mode
-        ;;rdebug
         yari
         ruby-mode
         ))
@@ -48,15 +54,6 @@
 
 (setq el-get-sources
       '(
-        (:name coffee-mode
-               :type git
-               :url "git://github.com/defunkt/coffee-mode.git"
-               :post-init (lambda ()
-                            (autoload 'coffee-mode "coffee-mode" nil t)))
-        (:name textmate
-               :type git
-               :url "git://github.com/defunkt/textmate.el"
-               :load "textmate.el")
         (:name js3-mode
                :type git
                :url "git://github.com/thomblake/js3-mode.git"
@@ -65,13 +62,41 @@
                             (autoload 'js3-mode "js3" nil t))
                )
         (:name yasnippet
+               :website "https://github.com/capitaomorte/yasnippet.git"
+               :description "YASnippet is a template system for Emacs."
                :type git
-               :url "git://github.com/emacsmirror/yasnippet.git"
+               :url "https://github.com/capitaomorte/yasnippet.git"
                :features "yasnippet"
+               :prepare (lambda ()
+                          ;; Set up the default snippets directory
+                          ;;
+                          ;; Principle: don't override any user settings
+                          ;; for yas/snippet-dirs, whether those were made
+                          ;; with setq or customize. If the user doesn't
+                          ;; want the default snippets, she shouldn't get
+                          ;; them!
+                          (unless (or (boundp 'yas/snippet-dirs) (get 'yas/snippet-dirs 'customized-value))
+                            (setq yas/snippet-dirs
+                                  (list (concat el-get-dir (file-name-as-directory "yasnippet") "snippets")))))
+
                :post-init (lambda ()
-                            (yas/initialize)
-                            (add-to-list 'yas/snippet-dirs (concat el-get-dir "yasnippet/snippets"))
-                            (yas/reload-all)))
+                            ;; Trick customize into believing the standard
+                            ;; value includes the default snippets.
+                            ;; yasnippet would probably do this itself,
+                            ;; except that it doesn't include an
+                            ;; installation procedure that sets up the
+                            ;; snippets directory, and thus doesn't know
+                            ;; where those snippets will be installed. See
+                            ;; http://code.google.com/p/yasnippet/issues/detail?id=179
+                            (put 'yas/snippet-dirs 'standard-value
+                                 ;; as cus-edit.el specifies, "a cons-cell
+                                 ;; whose car evaluates to the standard
+                                 ;; value"
+                                 (list (list 'quote
+                                             (list (concat el-get-dir (file-name-as-directory "yasnippet") "snippets"))))))
+               ;; byte-compile load vc-svn and that fails
+               ;; see https://github.com/dimitri/el-get/issues/200
+               :compile nil)
         (:name liquid-mode
                :type git
                :url "git://github.com/rehanift/Emacs-Liquid.git"
@@ -80,10 +105,9 @@
         ))
 
 (setq my-packages
-      (append
-       my-packages
-       el-get-sources))
-       ;;(mapcar 'el-get-source-name el-get-sources)))
+       (append
+        my-packages
+   (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get 'sync my-packages)
 
