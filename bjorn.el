@@ -35,6 +35,7 @@
         paredit
         rhtml-mode
         rinari
+        rspec-mode
         sass-mode
         textmate
         yaml-mode
