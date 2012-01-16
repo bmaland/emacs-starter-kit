@@ -5,9 +5,6 @@
 (unless package-archive-contents (package-refresh-contents))
 (setq starter-kit-packages  (list
                              'highlight-80+
-                             'inf-ruby
-                             'ruby-electric
-                             'ruby-compilation
                              ))
 (starter-kit-elpa-install)
 
@@ -36,6 +33,9 @@
         rinari
         rspec-mode
         ruby-mode
+        inf-ruby
+        ruby-electric
+        ruby-compilation
         sass-mode
         textmate
         yaml-mode
