@@ -4,7 +4,6 @@
 (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
 
 (global-set-key (kbd "C-c r") 'org-remember)
-(global-set-key (kbd "C-c C-l") 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
@@ -26,6 +25,11 @@
 (global-set-key (kbd "C-x a >") 'align-to-hash)
 (global-set-key (kbd "C-x a =") 'align-to-equals)
 
+;; folding
+(global-set-key (kbd "C-c S") 'fold-dwim-show-all)
+(global-set-key (kbd "C-c H") 'hs-hide-level)
+(global-set-key (kbd "C-c s") 'fold-dwim-toggle)
+
 ;; Completion that uses many different methods to find options.
 (global-set-key (kbd "M-/") 'hippie-expand)
 
@@ -45,8 +49,6 @@
 ;;; WINDOW SPLITING
 (global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
 (global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
-(global-set-key (kbd "M-2") 'split-window-vertically) ; was digit-argument
-(global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
 (global-set-key (kbd "M-o") 'other-window) ; was prefix
 
 ;; File finding
@@ -55,7 +57,6 @@
 (global-set-key (kbd "C-x f")     'recentf-ido-find-file)
 (global-set-key (kbd "C-x C-p")   'find-file-at-point)
 (global-set-key (kbd "C-c y")     'bury-buffer)
-;;(global-set-key (kbd "C-c r")     'revert-buffer)
 (global-set-key (kbd "M-`")       'file-cache-minibuffer-complete)
 (global-set-key (kbd "C-x C-b")   'ibuffer)
 (global-set-key (kbd "C-x C-d")   'dired)

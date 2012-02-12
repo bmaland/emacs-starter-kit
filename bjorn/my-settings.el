@@ -79,6 +79,11 @@
                                    (concat " " 24-hours ":" minutes " ")
                                    'face 'egoge-display-time)))
 
+(add-to-list 'hs-special-modes-alist
+       '(ruby-mode
+         "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+         (lambda (arg) (ruby-end-of-block)) nil))
+
 ;; SCSS-mode
 (setq scss-compile-at-save nil)
 
@@ -126,6 +131,7 @@
 (kill-wspace-mode t)
 (textmate-mode t)
 (winner-mode t)
+(hs-minor-mode t)
 
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
