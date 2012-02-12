@@ -98,6 +98,13 @@
              (local-set-key [tab] 'js2-indent-line)
              ))
 
+(add-hook 'js3-mode-hook
+          '(lambda ()
+             (coding-hook)
+             (setq js2-basic-offset 4)
+             (auto-fill-mode 0)
+             ))
+
 (add-hook 'prolog-mode-hook
           (lambda ()
             (coding-hook)
@@ -250,6 +257,10 @@
             (ibuffer-switch-to-saved-filter-groups "default")))
 
 (add-hook 'rhtml-mode-hook
+          (lambda ()
+            (auto-fill-mode 0)))
+
+(add-hook 'html-mode-hook
           (lambda ()
             (auto-fill-mode 0)))
 

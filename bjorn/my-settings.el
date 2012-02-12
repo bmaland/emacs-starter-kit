@@ -95,8 +95,8 @@
       (quote (("default"
                ("dired" (mode . dired-mode))
                ("magit" (mode . magit-mode))
-               ("python" (mode . python-mode))
                ("ruby" (mode . ruby-mode))
+               ("js3-mode" (mode . js3-mode))
                ("haml" (mode . haml-mode))
                ("elisp" (mode . emacs-lisp-mode))
                ("org" (mode . org-mode))

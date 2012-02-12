@@ -27,6 +27,7 @@
         haml-mode
         magit
         markdown-mode
+        mustache-mode
         org-mode
         paredit
         rhtml-mode
@@ -127,6 +128,8 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
+
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . liquid-mode))
 
