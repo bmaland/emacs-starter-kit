@@ -131,7 +131,6 @@
 (kill-wspace-mode t)
 (textmate-mode t)
 (winner-mode t)
-(hs-minor-mode t)
 
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
