@@ -50,6 +50,7 @@
 (global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
 (global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
 (global-set-key (kbd "M-o") 'other-window) ; was prefix
+;;(global-set-key (kbd "C-\ o") 'other-window) ; TODO må escape \
 
 ;; File finding
 (global-set-key (kbd "C-x M-f")   'ido-find-file-other-window)
